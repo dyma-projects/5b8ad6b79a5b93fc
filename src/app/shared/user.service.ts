@@ -13,7 +13,8 @@ export class UserService {
   constructor() { }
 
   addUser(newUser: string) {
-    this.users.value.push(newUser);
-    
+        this.users.value.push(newUser);
+        
+        console.log(this.users.value);
   }
 }

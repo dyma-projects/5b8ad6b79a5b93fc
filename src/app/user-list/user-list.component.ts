@@ -7,18 +7,17 @@ import { BehaviorSubject } from '../../../node_modules/rxjs';
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
-  export class UserListComponent implements OnInit {
+export class UserListComponent implements OnInit {
   public users: string[];
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    
-    this.userService.users.subscribe((users) => {
-      console.log(users);
-      this.userService.users.unsubscribe();
-     
+
+    this.userService.users.subscribe((myUsers: string[]) => {
+      this.users = myUsers;
+      console.log(this.users);
     })
-    
-  } 
+
+  }
 }
